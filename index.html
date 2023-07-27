@@ -4,24 +4,40 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>Login Form</title>
   </head>
   <body>
-      <main>
-        <div class="container">
-          <form class="logInForm">
-            <input type="text" placeholder="email"> 
-            <input type="text" placeholder="password">
-            <button type="submit">Login</button>
-          </form>
-          <form class="signUpForm">
-            <input type="text" placeholder="email"> 
-            <input type="text" placeholder="password">
-            <input type="text" placeholder="confirm password">
-            <input type="text" placeholder="name"> 
-            <button type="submit">SignUp</button>
-          </form>
+      <main >
+        <div class="signUpContainer" id="signUpContainer" hidden>
+          <div class="lSignUpContainer" id="triggerLogin">
+            <img class="logo" src="./pic.jpg" alt="">
+            <button>Login</button>
+          </div>
+          <div class="rSignUpContainer">
+            <form class="signUpForm">
+              <h1>Sign Up</h1>
+              <input type="text" placeholder="email"> 
+              <input type="text" placeholder="password">
+              <input type="text" placeholder="confirm password">
+              <input type="text" placeholder="name"> 
+              <button type="submit">SignUp</button>
+            </form>
+          </div>
         </div>
+        <div class="loginContainer" id="loginContainer">
+          <div class="lLoginContainer">
+            <form class="logInForm">
+              <h1>LOG IN</h1>
+              <input type="text" placeholder="email"> 
+              <input type="text" placeholder="password">
+              <button type="submit">Login</button>
+            </form>
+          </div>
+          <div class="rLoginContainer">
+            <img class="logo" src="./pic.jpg" alt="">
+            <button id="triggerSignUp">SignUp</button>
+          </div>
+        </div>   
       </main>
     <script type="module" src="/src/main.ts"></script>
   </body>

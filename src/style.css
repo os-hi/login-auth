@@ -6,33 +6,147 @@
 }
 
 main{
-  width: 50vw;
-  height: 60vh;
+  width: 70vw;
+  height: 50vh;
   border: 1px solid black;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border-radius: 10px;
+  overflow: hidden;
 }
-.container{
+.loginContainer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  user-select: none;
+  position: absolute;
+  box-sizing: border-box;
+}
+.lLoginContainer{
+  width: 35vw;
+  height: 50vh;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-around;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  background-color:ghostwhite;
 }
 .logInForm{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 0.5vw;
+}
+.logInForm>input{
+  width: 20vw;
+  padding: 5px;
+  border-radius: 8px;
+}
+.logInForm>button{
+  width: 10vw;
+  padding: 5px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+.logInForm>button:hover{
+  background: hsla(204, 95%, 77%, 1) 53%;
+}
+.rLoginContainer{
+  width: 35vw;
+  height: 50vh;
+  display: flex;
   flex-direction: column;
-  border: 1px solid black;
+  align-items: center;
+  justify-content: center;
+  gap: 5vh;
+  background: hsla(277, 79%, 84%, 1);
+  background: linear-gradient(90deg, hsla(277, 79%, 84%, 1) 0%,
+  hsla(204, 95%, 77%, 1) 53%);
+}
+.rLoginContainer>img{
+  width: 15vw;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+.rLoginContainer>button{
+  width: 10vw;
+  padding: 5px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+.rLoginContainer>button:hover{
+  background: hsla(277, 79%, 84%, 1);
+}
+
+/* Hidden sign up container */
+.signUpContainer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  user-select: none;
+  position: absolute;
+  box-sizing: border-box;
+}
+.lSignUpContainer{
+  width: 35vw;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5vh;
+  background: hsla(277, 79%, 84%, 1);
+  background: -webkit-linear-gradient(3600deg, hsla(277, 79%, 84%, 1) 68%, hsla(204, 95%, 77%, 1) 100%);
+}
+.lSignUpContainer>img{
+  width: 15vw;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+.lSignUpContainer>button{
+  width: 10vw;
+  padding: 5px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+.lSignUpContainer>button:hover{
+  background: hsla(204, 95%, 77%, 1) 53%;
+}
+.rSignUpContainer{
+  width: 35vw;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color:ghostwhite;
 }
 .signUpForm{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  border: 1px solid black;
+  gap: 0.5vw;
+}
+.signUpForm>input{
+  width: 20vw;
+  padding: 5px;
+  border-radius: 8px;
+}
+.signUpForm>button{
+  width: 10vw;
+  padding: 5px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+.signUpForm>button:hover{
+  background: hsla(277, 79%, 84%, 1);
+}
+.hide{
+  display: none;
 }
