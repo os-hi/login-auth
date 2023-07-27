@@ -7,6 +7,9 @@
     <title>Login Form</title>
   </head>
   <body>
+    <div class="welcomeMessage" id="welcomeMessage">
+      <h1>CONGRATULATIONS YOU HAVE SUCCESSFULLY LOGGED IN!</h1>
+    </div>
       <main >
         <div class="signUpContainer" id="signUpContainer" hidden>
           <div class="lSignUpContainer" id="triggerLogin">
@@ -16,11 +19,11 @@
           <div class="rSignUpContainer">
             <form class="signUpForm">
               <h1>Sign Up</h1>
-              <input type="text" placeholder="email"> 
-              <input type="text" placeholder="password">
-              <input type="text" placeholder="confirm password">
-              <input type="text" placeholder="name"> 
-              <button type="submit">SignUp</button>
+              <input type="text" id="emailSignup" placeholder="email">
+              <input type="text" placeholder="password" id="passSignUp">
+              <input type="text" placeholder="confirm password" id="passConfirm">
+              <input type="text" placeholder="name" id="nameSignUp"> 
+              <button type="submit" id="submitSignUp">SignUp</button>
             </form>
           </div>
         </div>
@@ -28,9 +31,16 @@
           <div class="lLoginContainer">
             <form class="logInForm">
               <h1>LOG IN</h1>
-              <input type="text" placeholder="email"> 
-              <input type="text" placeholder="password">
-              <button type="submit">Login</button>
+                <input type="email" name="email" id="emailLogin" placeholder="email">
+                <input class="ps" type="password" name="ps" id="passLogin" placeholder="password">
+                <label for="ps" id="popUpInvalid">
+                  
+                </label>
+                <button class="login" type="submit" id="loginBtn">Login</button>
+                <!-- <label class="noAccount" for="login" id="noAccount">
+                    no account yet? Register Here
+                </label> -->
+                
             </form>
           </div>
           <div class="rLoginContainer">

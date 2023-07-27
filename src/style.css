@@ -4,7 +4,29 @@
 *{
   font-family: 'Titillium Web', sans-serif;
 }
-
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.welcomeMessage{
+  width: 80vw;
+  aspect-ratio: 1/1;
+  border: 1px solid black;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  background-color: black;
+  color: white;
+  user-select: none;
+  display: none;
+}
+.welcomeMessage>h1{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
 main{
   width: 70vw;
   height: 60vh;
@@ -147,6 +169,12 @@ main{
 .signUpForm>button:hover{
   background: hsla(277, 79%, 84%, 1);
 }
+label{
+  color: red;
+}
 .hide{
   display: none;
+}
+.show{
+  display: block;
 }
