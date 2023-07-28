@@ -11,7 +11,7 @@ body{
 }
 .welcomeMessage{
   width: 80vw;
-  aspect-ratio: 1/1;
+  height: 90vh;
   border: 1px solid black;
   text-align: center;
   position: relative;
@@ -170,6 +170,7 @@ main{
   background: hsla(277, 79%, 84%, 1);
 }
 label{
+  font-size: 15px;
   color: red;
 }
 .hide{
