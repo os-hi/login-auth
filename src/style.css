@@ -170,7 +170,8 @@ main{
   background: hsla(277, 79%, 84%, 1);
 }
 #emailExist{
-  display: none;
+  font-size: 15px;
+  color: red;
 }
 label{
   font-size: 15px;

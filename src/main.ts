@@ -1,31 +1,53 @@
 import './style.css'
 import {triggeredSignUpBtn,triggeredLoginBtn, userLoginChecker} from './login'
-import {addUserInfo} from './signup' 
+import {addUserInfo, emailExist} from './signup' 
+import userLogin from './userLoginData.json'
 export const logInContainer = document.getElementById('loginContainer')
 const submitSignUpBtn = document.getElementById('submitSignUp')
 const userClickedLogin = document.getElementById('loginBtn')
-
+const confirmPassword = document.getElementById('confirmPass') as HTMLInputElement
 import {emailLogin, passWordLogin} from './loginUtils'
 import {emailSignUp, passSignUp, passConfirm, nameSignUp} from './signupUtils'
-
+let isEmailValid = false
 
 triggeredSignUpBtn?.addEventListener("click", function(event){
   event.preventDefault()
   toggleLogInContainer()
+  clearField()
 })
 triggeredLoginBtn?.addEventListener("click", function(event){
   event.preventDefault()
   toggleLogInContainer()
 })
+emailSignUp.addEventListener('keyup', function(event){
+  event.preventDefault()
+  emailValidate()
+})
 
+passConfirm.addEventListener('keyup', function(event){
+  event.preventDefault()
+  passWordChecker()
+})
 submitSignUpBtn?.addEventListener("click", function(event){
   event.preventDefault();
+  let isInputFieldEmpty = false
   const inputEmailValue = emailSignUp.value
   const inputpassWordValue = passSignUp.value
   const inputConfirmPass = passConfirm.value
   const inputName = nameSignUp.value
+  console.log(inputEmailValue)
+
+  if( inputEmailValue == '' ||
+      inputpassWordValue == '' ||
+      inputConfirmPass == ''||
+      inputName == ''){
+        console.log("reached here")
+        alert("All fields are required")
+        isInputFieldEmpty = true
+      }
+  else{
   addUserInfo(inputEmailValue, inputpassWordValue, inputConfirmPass, inputName)
-  toggleLogInContainer()
+  }
 })
 userClickedLogin?.addEventListener("click", function(event){
   event.preventDefault();
@@ -34,6 +56,41 @@ userClickedLogin?.addEventListener("click", function(event){
   userLoginChecker(inputEmailValue,inputpassWordValue)
 })
 
-function toggleLogInContainer(){
+export function toggleLogInContainer(){
   logInContainer?.classList.toggle('hide')
+}
+
+function emailValidate(){
+  const email = emailSignUp.value
+  
+  for(let i = 0; i<userLogin.length; i++){
+    if (email === userLogin[i].email){
+      emailExist.textContent = `email already exists`
+      submitSignUpBtn?.setAttribute('disabled', isEmailValid)
+    }
+    else{
+      emailExist.textContent = ''
+      submitSignUpBtn?.removeAttribute('disabled')
+    }
+    break;
+  }
+}
+
+function passWordChecker(){
+  if (passSignUp.value != passConfirm.value){
+    confirmPassword.textContent = `password did not match!`
+    submitSignUpBtn?.setAttribute('disabled', isEmailValid)
+  }
+  else{
+    confirmPassword.textContent = ''
+    submitSignUpBtn?.removeAttribute('disabled')
+  }
+}
+
+function clearField(){
+  emailSignUp.value = ''
+  passSignUp.value = ''
+  passConfirm.value = ''
+  nameSignUp.value = ''
+  emailExist.textContent = ''
 }

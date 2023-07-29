@@ -1,6 +1,8 @@
-// import { userLogin} from "./main"
+import { toggleLogInContainer} from "./main"
 import userLogin from './userLoginData.json'
-const emailExist = document.getElementById('emailExist') 
+export const emailExist = document.getElementById('emailExist') as HTMLInputElement
+export let isEmailExist = false
+
 
 // add new user info in the database
 export function addUserInfo(
@@ -15,18 +17,10 @@ export function addUserInfo(
       confirmPassword,
       name
     }
-     let isEmailExist = false
-     for(let i = 0; i<userLogin.length; i++){
-        if (email === userLogin[i].email){
-          emailExist?.classList.toggle('show')
-          isEmailExist = true
-          console.log("here")
-        }
-      }
-      if(isEmailExist == false){
         console.log("checking")
         // push data to array of users for login purpose
         userLogin.push(addNewUser)
         console.log(userLogin)
-      } 
+        toggleLogInContainer()
+      
 }
