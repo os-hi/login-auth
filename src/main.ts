@@ -5,25 +5,31 @@ export const logInContainer = document.getElementById('loginContainer')
 const submitSignUpBtn = document.getElementById('submitSignUp')
 const userClickedLogin = document.getElementById('loginBtn')
 
+import {emailLogin, passWordLogin} from './loginUtils'
+import {emailSignUp, passSignUp, passConfirm, nameSignUp} from './signupUtils'
 
 triggeredSignUpBtn?.addEventListener("click", function(event){
-  event.preventDefault();
-  logInContainer?.classList.toggle('hide')
+  event.preventDefault()
+  toggleLogInContainer()
 })
 triggeredLoginBtn?.addEventListener("click", function(event){
-  event.preventDefault();
-  logInContainer?.classList.toggle('hide')
+  event.preventDefault()
+  toggleLogInContainer()
 })
 submitSignUpBtn?.addEventListener("click", function(event){
+  const inputEmailValue = emailSignUp.value
+  const inputpassWordValue = passSignUp.value
+  const inputConfirmPass = passConfirm.value
+  const inputName = nameSignUp.value
   event.preventDefault();
-  console.log("clicked")
-  addUserInfo()
-  logInContainer?.classList.toggle('hide')
+  addUserInfo(inputEmailValue, inputpassWordValue, inputConfirmPass, inputName)
+  toggleLogInContainer()
 })
 userClickedLogin?.addEventListener("click", function(event){
+  const inputEmailValue = emailLogin.value
+  const inputpassWordValue = passWordLogin.value
   event.preventDefault();
-  console.log("im clicked")
-  userLoginChecker()
+  userLoginChecker(inputEmailValue,inputpassWordValue)
 })
 
 export let userLogin: {
@@ -51,3 +57,6 @@ export let userLogin: {
     confirmPassword:'angelagwapa'
   }
 ]
+function toggleLogInContainer(){
+  logInContainer?.classList.toggle('hide')
+}
