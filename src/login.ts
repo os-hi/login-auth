@@ -2,7 +2,7 @@ export const triggeredSignUpBtn = document.getElementById('triggerSignUp')
 export const triggeredLoginBtn = document.getElementById('triggerLogin')
 
 const welcomeMessageDisplay = document.getElementById('welcomeMessage')
-const popUpInvalid = document.getElementById('popUpInvalid') as HTMLInputElement
+export const popUpInvalid = document.getElementById('popUpInvalid') as HTMLInputElement
 
 import userInfo from './userLoginData.json'
 import { passWordLogin } from './loginUtils'
@@ -26,5 +26,5 @@ export function userLoginChecker(userEmail: string, userPassword: string) {
 }
 
 function invalidPrompt (){
-  popUpInvalid.textContent = `invalid input`
+  popUpInvalid.textContent = `Invalid input`
 } 

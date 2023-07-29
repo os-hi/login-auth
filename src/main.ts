@@ -1,5 +1,5 @@
 import './style.css'
-import {triggeredSignUpBtn,triggeredLoginBtn, userLoginChecker} from './login'
+import {triggeredSignUpBtn,triggeredLoginBtn, userLoginChecker, popUpInvalid} from './login'
 import {addUserInfo, emailExist} from './signup' 
 import userLogin from './userLoginData.json'
 import {emailLogin, passWordLogin} from './loginUtils'
@@ -19,6 +19,7 @@ triggeredSignUpBtn?.addEventListener("click", function(event){
 triggeredLoginBtn?.addEventListener("click", function(event){
   event.preventDefault()
   toggleLogInContainer()
+  popUpInvalid.textContent = ''
 })
 emailSignUp.addEventListener('keyup', function(event){
   event.preventDefault()
@@ -42,7 +43,6 @@ submitSignUpBtn?.addEventListener("click", function(event){
       inputpassWordValue == '' ||
       inputConfirmPass == ''||
       inputName == ''){
-        console.log("reached here")
         alert("All fields are required")
         isInputFieldEmpty = true
       }
@@ -52,9 +52,17 @@ submitSignUpBtn?.addEventListener("click", function(event){
 })
 userClickedLogin?.addEventListener("click", function(event){
   event.preventDefault();
+  let isInputFieldEmpty = false
   const inputEmailValue = emailLogin.value
   const inputpassWordValue = passWordLogin.value
+  if (inputEmailValue == '' || inputpassWordValue == '')
+  {
+    alert("All fields are required")
+        isInputFieldEmpty = true
+  }
+  else{
   userLoginChecker(inputEmailValue,inputpassWordValue)
+  }
 })
 
 export function toggleLogInContainer(){
@@ -66,7 +74,7 @@ function emailValidate(){
   
   for(let i = 0; i<userLogin.length; i++){
     if (email === userLogin[i].email){
-      emailExist.textContent = `email already exists`
+      emailExist.textContent = `Email account already used!`
       submitSignUpBtn?.setAttribute('disabled', '')
     }
     else{

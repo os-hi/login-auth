@@ -8,6 +8,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color:#272829 ;
 }
 .welcomeMessage{
   width: 80vw;
@@ -29,7 +30,7 @@ body{
 }
 main{
   width: 70vw;
-  height: 60vh;
+  height: 70vh;
   border: 1px solid black;
   position: absolute;
   top: 50%;
@@ -49,7 +50,7 @@ main{
 }
 .lLoginContainer{
   width: 35vw;
-  height: 60vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -67,27 +68,37 @@ main{
   width: 20vw;
   padding: 5px;
   border-radius: 8px;
+  border: 1px solid gray;
 }
 .logInForm>button{
   width: 10vw;
   padding: 5px;
+  margin-top: 10px;
   border-radius: 8px;
+  color: white;
+  border: none;
   font-weight: bold;
+  background: #e10e0e;
+  box-shadow: -1px -1px 0px 1px rgba(0,0,0,0.17) inset;
+-webkit-box-shadow: -1px -1px 0px 1px rgba(0,0,0,0.17) inset;
 }
 .logInForm>button:hover{
-  background: hsla(204, 95%, 77%, 1) 53%;
+  opacity: 0.5;
 }
 .rLoginContainer{
   width: 35vw;
-  height: 60vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 5vh;
-  background: hsla(277, 79%, 84%, 1);
-  background: linear-gradient(90deg, hsla(277, 79%, 84%, 1) 0%,
-  hsla(204, 95%, 77%, 1) 53%);
+  background: linear-gradient(to left bottom,
+                                     #d80909,
+                                     #dd0c0b,
+                                     #e10e0e,
+                                     #e61010,
+                                     #eb1212);
 }
 .rLoginContainer>img{
   width: 15vw;
@@ -99,9 +110,13 @@ main{
   padding: 5px;
   border-radius: 8px;
   font-weight: bold;
+  color: white;
+  border: 1px solid white;
+  background: #dd0c0b;
+
 }
 .rLoginContainer>button:hover{
-  background: hsla(277, 79%, 84%, 1);
+  opacity: 0.5;
 }
 
 /* Hidden sign up container */
@@ -116,14 +131,18 @@ main{
 }
 .lSignUpContainer{
   width: 35vw;
-  height: 60vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 5vh;
-  background: hsla(277, 79%, 84%, 1);
-  background: -webkit-linear-gradient(3600deg, hsla(277, 79%, 84%, 1) 68%, hsla(204, 95%, 77%, 1) 100%);
+  background: linear-gradient(to left bottom,
+  #d80909,
+  #dd0c0b,
+  #e10e0e,
+  #e61010,
+  #eb1212);
 }
 .lSignUpContainer>img{
   width: 15vw;
@@ -135,13 +154,17 @@ main{
   padding: 5px;
   border-radius: 8px;
   font-weight: bold;
+  background:  #e10e0e;
+  color: white;
+  border: 1px solid white;
+  
 }
 .lSignUpContainer>button:hover{
-  background: hsla(204, 95%, 77%, 1) 53%;
+  opacity: 0.5;
 }
 .rSignUpContainer{
   width: 35vw;
-  height: 60vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -159,24 +182,38 @@ main{
   width: 20vw;
   padding: 5px;
   border-radius: 8px;
+  border: 1px solid gray;
 }
 .signUpForm>button{
+  margin-top: 10px;
   width: 10vw;
   padding: 5px;
   border-radius: 8px;
   font-weight: bold;
+  border: none;
+  color: white;
+  background: #e10e0e;
+  box-shadow: -1px -1px 0px 1px rgba(0,0,0,0.17) inset;
+-webkit-box-shadow: -1px -1px 0px 1px rgba(0,0,0,0.17) inset;
 }
 .signUpForm>button:hover{
-  background: hsla(277, 79%, 84%, 1);
+  opacity: 0.5;
 }
 #emailExist{
-  font-size: 15px;
+  font-size: 12px;
   color: red;
 }
+#confirmPass{
+  font-size: 12px;
+  color: orange;
+}
 label{
-  font-size: 15px;
+  width: 20vw;
+  font-size: 12px;
   color: red;
-  position: relative;
+  text-align: left;
+  padding: 0;
+  margin: 0;
 }
 .hide{
   display: none;
