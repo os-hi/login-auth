@@ -30,7 +30,7 @@ export let userLogin: {
   name: string;
   email: string;
   password: string;
-  confirmPassword: string;/*  */
+  confirmPassword: string;
 }[] = [
   {
     name: 'jake',
@@ -43,6 +43,11 @@ export let userLogin: {
     email: 'hushy@gmail.com',
     password:'angelagwapa',
     confirmPassword:'angelagwapa'
+  },
+  {
+    name: 'denver',
+    email: 'hushy@gmail.com',
+    password:'angelagwapa',
+    confirmPassword:'angelagwapa'
   }
-
 ]

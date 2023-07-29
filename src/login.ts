@@ -8,20 +8,15 @@ const popUpInvalid = document.getElementById('popUpInvalid') as HTMLInputElement
 import {userLogin} from './main'
 
 
-  
-
 export function userLoginChecker(){ 
-    let userEmail = emailLogin?.value
-    let userPass = passWordLogin?.value
+    const userEmail = emailLogin?.value
+    const userPass = passWordLogin?.value
+
     for(let i = 0; i <userLogin.length; i++){
-      if(userLogin[i].email == userEmail.toString() && userLogin[i].password == userPass.toString()){
+      if(userLogin[i].email === userEmail.toString() && userLogin[i].password === userPass.toString()){
           welcomeMessageDisplay?.classList.toggle('show')       
       }
-      else{
-        popUpInvalid.innerHTML += `
-          Invalid input!
-        `
-        passWordLogin.value = '';
-      }
     }
-  }
+    passWordLogin.value = ''
+    popUpInvalid.textContent = `invalid input`
+}
