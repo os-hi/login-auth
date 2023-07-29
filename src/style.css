@@ -169,9 +169,13 @@ main{
 .signUpForm>button:hover{
   background: hsla(277, 79%, 84%, 1);
 }
+#emailExist{
+  display: none;
+}
 label{
   font-size: 15px;
   color: red;
+  position: relative;
 }
 .hide{
   display: none;

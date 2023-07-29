@@ -1,0 +1,15 @@
+[
+    {
+        "name": "jake",
+        "email":"batucanjake18@gmail.com",
+        "password":"mypassword",
+        "confirmPassword":"mypassword"
+    },
+    {
+        "name": "angela",
+        "email":"hushy@gmail.com",
+        "password":"angelagwapa",
+        "confirmPassword":"angelagwapa"
+    }
+]
+  

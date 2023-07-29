@@ -4,18 +4,25 @@ export const triggeredLoginBtn = document.getElementById('triggerLogin')
 const welcomeMessageDisplay = document.getElementById('welcomeMessage')
 const popUpInvalid = document.getElementById('popUpInvalid') as HTMLInputElement
 
-import { userLogin } from './main'
+import userInfo from './userLoginData.json'
 import { passWordLogin } from './loginUtils'
 
-export function userLoginChecker(userEmail: string, userPassword: string){ 
 
-    for(let i = 0; i <userLogin.length; i++){
-      if(userLogin[i].email === userEmail && userLogin[i].password === userPassword){
-          welcomeMessageDisplay?.classList.toggle('show')       
-      }
+// verifies if user account exist in the json file 
+export function userLoginChecker(userEmail: string, userPassword: string) {
+  let isLoggedIn = false
+  for( let i = 0; i<userInfo.length; i++){
+    if(userEmail === userInfo[i].email && userPassword === userInfo[i].password){
+      welcomeMessageDisplay?.classList.toggle('show') 
+      isLoggedIn = true
+      break;
     }
+  }
+  if(!isLoggedIn){
     passWordLogin.value = ''
-    invalidPrompt()
+    invalidPrompt ()
+  }
+    
 }
 
 function invalidPrompt (){

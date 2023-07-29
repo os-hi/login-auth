@@ -19,7 +19,10 @@
           <div class="rSignUpContainer">
             <form class="signUpForm">
               <h1>Sign Up</h1>
-              <input type="text" id="emailSignup" placeholder="email" required>
+              <input class="email-input" type="text" id="emailSignup" placeholder="email" required>
+              <label for="email-input" id="emailExist">
+                  email account already exists!
+              </label>
               <input type="text" placeholder="password" id="passSignUp" required>
               <input type="text" placeholder="confirm password" id="passConfirm" required>
               <input type="text" placeholder="name" id="nameSignUp" required> 
@@ -45,6 +48,7 @@
           </div>
         </div>   
       </main>
+    <script src="./src/userLoginData.json"></script> <!-- Load the JSON file using a script tag -->
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
