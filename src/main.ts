@@ -69,7 +69,6 @@ export function toggleLogInContainer(){
 
 function emailValidate(){
   const email = emailSignUp.value
-  
   for(let i = 0; i<userLogin.length; i++){
     if (email === userLogin[i].email){
       emailExist.textContent = `Email account already used!`
