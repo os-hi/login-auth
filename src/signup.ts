@@ -17,7 +17,6 @@ export function addUserInfo(
       confirmPassword,
       name
     }
-        console.log("checking")
         // push data to array of users for login purpose
         userLogin.push(addNewUser)
         console.log(userLogin)

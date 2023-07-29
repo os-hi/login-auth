@@ -37,8 +37,6 @@ submitSignUpBtn?.addEventListener("click", function(event){
   const inputpassWordValue = passSignUp.value
   const inputConfirmPass = passConfirm.value
   const inputName = nameSignUp.value
-  console.log(inputEmailValue)
-
   if( inputEmailValue == '' ||
       inputpassWordValue == '' ||
       inputConfirmPass == ''||
