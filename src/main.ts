@@ -2,13 +2,14 @@ import './style.css'
 import {triggeredSignUpBtn,triggeredLoginBtn, userLoginChecker} from './login'
 import {addUserInfo, emailExist} from './signup' 
 import userLogin from './userLoginData.json'
+import {emailLogin, passWordLogin} from './loginUtils'
+import {emailSignUp, passSignUp, passConfirm, nameSignUp} from './signupUtils'
+
 export const logInContainer = document.getElementById('loginContainer')
+
 const submitSignUpBtn = document.getElementById('submitSignUp')
 const userClickedLogin = document.getElementById('loginBtn')
 const confirmPassword = document.getElementById('confirmPass') as HTMLInputElement
-import {emailLogin, passWordLogin} from './loginUtils'
-import {emailSignUp, passSignUp, passConfirm, nameSignUp} from './signupUtils'
-let isEmailValid = false
 
 triggeredSignUpBtn?.addEventListener("click", function(event){
   event.preventDefault()
@@ -66,7 +67,7 @@ function emailValidate(){
   for(let i = 0; i<userLogin.length; i++){
     if (email === userLogin[i].email){
       emailExist.textContent = `email already exists`
-      submitSignUpBtn?.setAttribute('disabled', isEmailValid)
+      submitSignUpBtn?.setAttribute('disabled', '')
     }
     else{
       emailExist.textContent = ''
@@ -79,7 +80,7 @@ function emailValidate(){
 function passWordChecker(){
   if (passSignUp.value != passConfirm.value){
     confirmPassword.textContent = `password did not match!`
-    submitSignUpBtn?.setAttribute('disabled', isEmailValid)
+    submitSignUpBtn?.setAttribute('disabled', '')
   }
   else{
     confirmPassword.textContent = ''
